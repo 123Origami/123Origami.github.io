@@ -1,0 +1,44 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import ResumeDropdown from "../../elements/ResumeDropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+
+// content
+const experience = [
+    {
+        title: "Data Engineering Intern",
+        place: "Pngme",
+        period: "July 2026 - Ongoing",
+        text: "Remediated web application security vulnerabilities (CSP, HSTS, X-Frame-Options) on a production Next.js/Payload CMS app. Diagnosed a CI/CD deployment failure down to a self-hosted runner outage, then built and deployed a corrected Docker image to AWS ECR and an EKS cluster to ship the fix without delay. Investigated DNS and email security misconfigurations in Cloudflare, including a DMARC policy update and root-causing a subdomain outage tied to a third-party integration conflict."
+    },
+    {
+        title: "Technical Intern",
+        place: "ICT Authority",
+        period: "May 2025 - August 2025",
+        text: "Provided technical support and troubleshooting for hardware, software, and network systems across the organization. Assisted in the maintenance and documentation of ICT infrastructure, supporting system reliability and compliance. Conducted basic data collection and analysis to support IT decision-making and reporting initiatives. Collaborated with ICT staff on technology deployment projects and user training sessions."
+    },
+    {
+        title: "Technical Position Intern",
+        place: "eMobilis Technology Training Institute",
+        period: "May 2024 - July 2024",
+        text: "Provided technical support for IT systems, resolving software and hardware issues efficiently. Assisted in deploying and maintaining IT solutions, ensuring minimal downtime. Collaborated with cross-functional teams to improve system performance and user experience."
+    },
+]
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">Experience</Heading>
+    <div class="flex flex-col gap-4">  
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                experience.map((i) => (
+                    <ResumeDropdown title={i.title} place={i.place} period={i.period} text={i.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom />
+    </div>
+
+</Container>

@@ -1,0 +1,46 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+import Heading from "../../elements/Heading.astro";
+import Dropdown from "../../elements/Dropdown.astro";
+
+// content
+const faq = [
+    {
+        title: "Are you open to internships or full-time roles?",
+        text: "Yes — I'm a Computer Science undergraduate actively looking for software development, cloud infrastructure, or cybersecurity opportunities, and open to internships, graduate roles, and freelance work."
+    },
+    {
+        title: "What's your tech stack?",
+        text: "I work primarily with Python, Django, C#, SQL, and JavaScript, deploy on AWS with Docker, Kubernetes, and Terraform, and use MySQL and MongoDB for data storage."
+    },
+    {
+        title: "Do you take on freelance or project-based work?",
+        text: "Yes, I take on select freelance and collaborative projects, especially around full-stack web development, cloud deployment, or security remediation."
+    },
+    {
+        title: "Can we collaborate remotely?",
+        text: "Absolutely. I'm comfortable working with distributed teams over video calls, Git-based workflows, and async collaboration tools."
+    },
+    {
+        title: "What are you currently learning?",
+        text: "I'm building on my recent certifications in ethical hacking and cloud and network security, and deepening my hands-on experience with AWS, Kubernetes, and CI/CD pipelines."
+    },
+]
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">FAQ</Heading>
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                faq.map((q, index) => (
+                    <Dropdown title=`${index + 1}. ${q.title}`  text={q.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom />        
+    </div>
+    
+</Container>

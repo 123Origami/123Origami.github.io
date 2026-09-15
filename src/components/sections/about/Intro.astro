@@ -1,0 +1,23 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Text from "../../elements/Text.astro";
+import ImageContainer from "../../elements/ImageContainer.astro";
+
+// assets
+import sally from "../../../assets/images/sally-photo.jpg";
+---
+
+<Container variant={'xl'}>
+    <Heading tagName="h1" tagSize="h1" class="text-center">Meet Sally</Heading>
+    <div class="flex md:flex-row flex-col gap-16 md:items-center">
+        <div class="flex-1 flex flex-col gap-7">
+            <Text variant={'xl'} class="text-base-900">I'm a detail-oriented Computer Science undergraduate with a solid foundation in software development, database systems, and IT support, now expanding into cybersecurity and cloud technologies.</Text>
+            <Text variant={'sm'} class="text-base-900">I'm proficient in Python, C#, and SQL, and comfortable across Git, Linux, and cloud platforms like AWS. Recently certified in ethical hacking, and cloud and network security, I combine strong analytical skills with continuous learning agility and teamwork to build secure, efficient, and scalable technical solutions.</Text>
+        </div>
+        <div class="flex-1 md:h-[500px] w-full">
+            <ImageContainer src={sally} alt="Sally Munga"/>
+        </div>
+    </div>
+</Container>

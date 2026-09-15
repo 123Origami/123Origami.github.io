@@ -1,0 +1,50 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import ResumeDropdown from "../../elements/ResumeDropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+
+// content
+const education = [
+    {
+        title: "BSc Computer Science",
+        place: "Egerton University",
+        period: "Awaiting Graduation",
+        text: "Relevant coursework: Algorithms, Data Structures, Database Systems, Software Engineering, Artificial Intelligence, Computer Networks, Cyber Security, Linux Operating Systems, Data Analysis, Data Mining."
+    },
+    {
+        title: "Certificate in Cloud and Network Security",
+        place: "CyberShujaa",
+        period: "2025",
+        text: "Comprehensive training covering cloud security fundamentals, AWS security services (IAM, VPC, Security Groups, KMS), Azure security tools (Azure AD, NSGs, Defender for Cloud), and network security best practices."
+    },
+    {
+        title: "Certificate in Ethical Hacking",
+        place: "CyberShujaa",
+        period: "2025",
+        text: "Completed comprehensive training in penetration testing, vulnerability assessment, and network security principles."
+    },
+    {
+        title: "CS50P: Introduction to Programming with Python",
+        place: "Harvard University (edX)",
+        period: "2025",
+        text: "Completed Harvard's rigorous CS50P course covering Python fundamentals, data structures, file I/O, regular expressions, and object-oriented programming."
+    }
+]
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">Education</Heading>
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                education.map((i) => (
+                    <ResumeDropdown title={i.title} place={i.place} period={i.period} text={i.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom /> 
+    </div>
+    
+</Container>
